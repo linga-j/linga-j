@@ -3,44 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nagalingam J | Portfolio</title>
+  <title>Nagalingam J | 3D Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Nagalingam J</h1>
-    <p>Aspiring Computer Scientist | Blockchain & Frappe Enthusiast</p>
-  </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m a B.Sc. Computer Science student from Erode, Tamil Nadu. I'm passionate about blockchain, Frappe framework, and building smart digital solutions for agriculture, government, and education.</p>
+  <!-- 🔵 3D Animated Home Background -->
+  <section id="home" class="section">
+    <div class="spline-wrapper">
+      <iframe src="https://my.spline.design/portfoliointroscene-9fbb262d9ea64e13f914fc7d06bcd580/" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    <div class="overlay-text">
+      <h1>Nagalingam J</h1>
+      <p>Blockchain | Frappe | Tech Builder</p>
+      <div class="scroll-buttons">
+        <button onclick="scrollToSection('projects')">Projects</button>
+        <button onclick="scrollToSection('contact')">Contact</button>
+      </div>
+    </div>
   </section>
 
-  <section id="projects">
+  <!-- 🔧 Projects Section -->
+  <section id="projects" class="section light">
     <h2>Projects</h2>
     <ul>
-      <li><strong>EduChain Vault</strong> – A blockchain-based certificate system with tamper-proof verification.</li>
-      <li><strong>MediChain Vault</strong> – Offline medical records system using Ethereum blockchain.</li>
-      <li><strong>Smart Farmer Crop Calendar</strong> – Yield and price prediction system for farmers using ML & Frappe.</li>
-      <li><strong>Tree Farm Management</strong> – Frappe-based web app for coconut, mango farm revenue improvement.</li>
+      <li>EduChain Vault – Blockchain Certificate Issuance</li>
+      <li>MediChain Vault – Hospital Data Blockchain</li>
+      <li>Smart Farmer Crop Calendar with Prediction</li>
     </ul>
   </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <p>Frappe, Python, HTML/CSS, GitHub, Linux, Java, Solidity, Machine Learning</p>
-  </section>
-
-  <section id="contact">
+  <!-- 📞 Contact Section -->
+  <section id="contact" class="section dark">
     <h2>Contact Me</h2>
     <p>Email: nagalingamj.dev@gmail.com</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/nagalingam-linga-j" target="_blank">Nagalingam J</a></p>
-    <p>GitHub: <a href="https://github.com/nagalingamj" target="_blank">github.com/nagalingamj</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/nagalingam-linga-j">My Profile</a></p>
   </section>
 
   <footer>
     <p>&copy; 2025 Nagalingam J</p>
   </footer>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
 </body>
 </html>
