@@ -1,95 +1,100 @@
-/* General Page Settings */
-body, html {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
   font-family: 'Segoe UI', sans-serif;
   scroll-behavior: smooth;
 }
 
-.section {
+/* 🎨 Hero Section */
+.hero {
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
   height: 100vh;
-  padding: 2rem;
-  box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
-}
-
-/* 3D Spline Section */
-.spline-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  z-index: 1;
-}
-
-.overlay-text {
-  position: relative;
-  z-index: 2;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding-top: 20vh;
+  position: relative;
 }
 
-.overlay-text h1 {
+.overlay h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
 }
 
-.overlay-text p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+.glow {
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #00f, 0 0 30px #00f;
 }
 
-.scroll-buttons button {
-  margin: 0 10px;
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.buttons button {
+  background: #fff;
+  color: #1f1c2c;
   padding: 0.8rem 1.5rem;
-  font-size: 1rem;
+  margin: 0 10px;
   border: none;
-  border-radius: 8px;
-  background: #ffffffaa;
-  color: #000;
+  border-radius: 10px;
+  font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.scroll-buttons button:hover {
-  background: #ffffff;
-  transform: scale(1.05);
+.buttons button:hover {
+  transform: scale(1.1);
+  background: #e2e2e2;
 }
 
-/* Projects and Contact Styling */
+/* 🌟 Section Styling */
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
 .light {
-  background: #f4f4f4;
-  color: #333;
-  z-index: 2;
+  background: #f9f9f9;
+  color: #222;
 }
 
 .dark {
-  background: #1f1f1f;
+  background: #1e1e1e;
   color: #f0f0f0;
-  z-index: 2;
 }
 
-section h2 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 1rem;
+/* 🧱 Project Cards */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-section ul {
-  max-width: 700px;
-  margin: 0 auto;
-  padding-left: 20px;
+.card {
+  background: white;
+  color: #222;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
 }
 
-section ul li {
-  margin-bottom: 1rem;
-  line-height: 1.6;
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
 }
 
-/* Footer */
+.dark a {
+  color: #80dfff;
+}
+
 footer {
   background: #000;
   color: #ccc;
