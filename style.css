@@ -7,13 +7,13 @@
 body, html {
   font-family: 'Segoe UI', sans-serif;
   scroll-behavior: smooth;
-  background: #f5f5f5;
+  background: #0d0d0d;
   color: #222;
+  overflow-x: hidden;
 }
 
-/* 🎨 Hero Section */
+/* 🎨 3D Hero Background */
 .hero {
-  background: linear-gradient(135deg, #1f1c2c, #928dab);
   height: 100vh;
   color: white;
   display: flex;
@@ -21,83 +21,91 @@ body, html {
   justify-content: center;
   text-align: center;
   position: relative;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a40, #002f4b);
+  background-size: 300% 300%;
+  animation: bgMove 12s ease infinite;
+  perspective: 1000px;
 }
 
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hero Text with 3D Glow */
 .overlay h1 {
   font-size: 3.5rem;
   margin-bottom: 0.5rem;
+  transform: rotateY(-5deg) translateZ(20px);
+  text-shadow: 0 0 20px rgba(0, 200, 255, 0.8), 0 0 40px rgba(0, 200, 255, 0.5);
+  animation: float 3s ease-in-out infinite;
 }
 
-.glow {
-  color: #fff;
-  text-shadow: 0 0 15px #fff, 0 0 25px #00f, 0 0 40px #00f;
+@keyframes float {
+  0%, 100% { transform: rotateY(-5deg) translateY(0) translateZ(20px); }
+  50% { transform: rotateY(5deg) translateY(-10px) translateZ(30px); }
 }
 
 .subtitle {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   margin-bottom: 2rem;
   font-weight: 300;
+  opacity: 0.9;
 }
 
+/* Buttons */
 .buttons button {
-  background: #fff;
+  background: rgba(255,255,255,0.9);
   color: #1f1c2c;
   padding: 0.8rem 1.5rem;
   margin: 0 10px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 .buttons button:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) translateZ(10px);
   background: #e2e2e2;
 }
 
-/* 🌟 Section Styling */
+/* Section Styling */
 .section {
   padding: 4rem 2rem;
   text-align: center;
 }
 .light { background: #fff; }
-.dark { background: #1e1e1e; color: #f0f0f0; }
+.dark { background: #0d0d0d; color: #f0f0f0; }
 
-/* 🧱 Skills List */
-.skills {
-  list-style: none;
-  margin-top: 1rem;
-}
-.skills li {
-  background: #eee;
-  padding: 0.5rem 1rem;
-  margin: 5px auto;
-  width: fit-content;
-  border-radius: 5px;
-  display: inline-block;
-}
-
-/* 🧱 Project Cards */
+/* 3D Glassmorphism Project Card */
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
+
 .card {
-  background: white;
-  color: #222;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
   padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  transform: perspective(1000px) rotateX(5deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Links in dark section */
+.card:hover {
+  transform: perspective(1000px) rotateX(0deg) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+}
+
+/* Links */
 .dark a { color: #80dfff; }
 
 /* Footer */
